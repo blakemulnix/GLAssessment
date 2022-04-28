@@ -1,0 +1,16 @@
+<html>
+   <body>
+      <h1>{{ invoice['title'] }}</h1>
+      <h3>{{ invoice['description'] }}</h3>
+
+      {% if condition == True %}
+        <p>You successfully made a payment of ${{ payment_made }}. </p>
+      {% endif %}
+
+      <form action = "http://localhost:5000/pay_invoice/{{ invoice_id }}" method = "POST">
+         <p>Remaining Balance: ${{ invoice['amount'] }}</p>
+         <p>Payment Amount: <input type = "number" name = "payment_amount" step="0.01" value="0.00"/></p>
+         <p><input type = "submit" value = "Make Payment" /></p>
+      </form>
+   </body>
+</html>
