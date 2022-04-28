@@ -1,4 +1,4 @@
-# Gravity Legal Assessment
+# GL Assessment
 
 ## How to setup and run the application (for unix systems)
 
