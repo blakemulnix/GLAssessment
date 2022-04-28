@@ -18,5 +18,5 @@
 - Send your POST request to `localhost:5000/invoices`
 - Navigate to the URL in the response
 - Enter a payment amount and hit the "Make Payment" button
-- Once the you have paid the full amount (or more than the full amount), you will see the "Payment Complete" option
+- Once the you have paid the full amount (or more than the full amount), you will see the "Payment Complete" page
 - To reset the stored data, overwrite the `data/invoice_data.json` with `{"invoices": {}}`
