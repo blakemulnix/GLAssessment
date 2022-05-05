@@ -5,10 +5,11 @@ from flask import Flask, request, render_template
 from utils.validation_utils import ValidationUtils
 from utils.format_utils import FormatUtils
 from utils.invoice_utils import InvoiceUtils
+from utils.config_utils import get_base_url
 
 app = Flask(__name__)
 
-base_url = 'localhost:5000/'
+base_url = get_base_url()
 
 
 @app.route('/invoices', methods=['POST'])
@@ -38,7 +39,8 @@ def pay_invoice(invoice_id):
             return render_template('pay_invoice.html',
                                    invoice_id=invoice_id,
                                    invoice=invoice,
-                                   payment_made=FormatUtils.format_currency_value(payment_amount))
+                                   payment_made=FormatUtils.format_currency_value(payment_amount),
+                                   base_url=base_url)
 
     elif request.method == 'GET':
         invoice = InvoiceUtils.get_invoice(invoice_id)
@@ -51,7 +53,8 @@ def pay_invoice(invoice_id):
             return render_template('pay_invoice.html',
                                    invoice_id=invoice_id,
                                    invoice=invoice,
-                                   payment_made=None)
+                                   payment_made=None,
+                                   base_url=base_url)
 
 
 if __name__ == '__main__':

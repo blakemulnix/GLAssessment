@@ -13,7 +13,7 @@ class InvoiceUtils:
         new_invoice = request_json
         new_invoice['amount'] = FormatUtils.format_currency_value(new_invoice['amount'])
         new_invoice_id = str(uuid.uuid4())
-        new_invoice_url = base_url + 'pay_invoice/' + str(new_invoice_id)
+        new_invoice_url = base_url + '/pay_invoice/' + str(new_invoice_id)
         new_invoice['url'] = new_invoice_url
 
         with open(invoice_data_filepath, 'r+') as f:
