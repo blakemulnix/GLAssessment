@@ -1,4 +1,6 @@
-# GL Assessment
+# Python Payment Processor
+
+This is a simple mock payment processing app I created. It takes POST requests to add payments and returns a URL where that payment can be paid in the response. The data storage mechanism is a simple JSON flatfile.
 
 ## How to setup and run the application (for unix systems)
 
